@@ -103,10 +103,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 async function loadLetterData() {
-  const tryPaths = ['/api/letter', '/data/letter.json', 'data/letter.json', '../data/letter.json'];
+  const tryPaths = ['data/letter.json', './data/letter.json', '/api/letter', '/data/letter.json'];
   for (const p of tryPaths) {
     try {
-      const res = await fetch(p);
+      const res = await fetch(`${p}?v=${Date.now()}`, { cache: 'no-store' });
       if (res.ok) {
         const data = await res.json();
         letterData = { ...DEFAULT_LETTER_DATA, ...data };
