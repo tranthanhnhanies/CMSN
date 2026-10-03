@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "title": "A Letter For You 💌 | Happy Birthday",
+    "sender": "Your Name",
+    "recipient": "Special Friend"
+  },
+  "envelope": {
+    "to": "My Duyen",
+    "subtext": "A letter for you...",
+    "openButton": "Open the letter 💌",
+    "waxSealSymbol": "♥"
+  },
+  "letter": {
+    "date": "October 5, 2026",
+    "greeting": "Dear MD,",
+    "paragraphs": [
+      "Today is a special day. I hope you have a wonderful birthday, filled with happiness, peace, and plenty of reasons to smile. I don't really know how to put my wishes into words in a way that feels special enough, so I'll simply wish you all the best—not just today, but in all the days that are yet to come.",
+      "Time really does pass quickly. Sometimes I suddenly realize that we have been through quite a lot together, from the simplest conversations to those little moments that I think I will still smile about when I look back on them someday. Perhaps we didn't think much of them at the time, but somehow, those ordinary little moments became memories worth holding on to.",
+      "Those memories are still in my mind. There are things I may eventually forget, but there are also moments when, just by remembering them, the feelings of that day somehow come back. I think that is what makes memories so special—time may move forward, but the things that truly matter always remain somewhere within us.",
+      "I also want to thank you. Thank you for being a part of my life, for all the conversations, all the laughter, all the things we shared, and even the ordinary moments we spent together. I may not have always said it, but I truly cherish this friendship and everything we once shared.",
+      "There are moments in life that, once they have passed, can never be brought back. There are words that have already been spoken, things that have already happened, and sometimes, things that leave us with regrets that stay with us for a very long time. I've sometimes thought that if the word “if” could take us back to the moments before our decisions, if every word could be spoken one more time, perhaps things would have been different. But life doesn't always go the way we hope it will. There are highs and there are lows; there are people who enter our lives and stay, and there are people who were once so close, but eventually find themselves walking down different paths. I don't know where life will take us in the future, but if one day, somewhere along the long road of life, our paths happen to cross again, I only hope that by then, I can come to you with a purer heart, a more mature version of myself, and a deeper understanding that perhaps I didn't have enough of today.",
+      "As you begin another year of your life, I hope you encounter many beautiful things. I hope you stay healthy, happy, and have the courage to pursue the things you truly want. And when life becomes difficult, I hope you will always find the strength to keep moving forward. If there are days when things don't go the way you want them to, don't forget that there are still so many beautiful things waiting for you ahead. I hope the years to come bring you countless wonderful experiences and memories that will make you smile whenever you look back on them.",
+      "Finally, happy birthday. Thank you for becoming a part of some of the most beautiful memories in my life. Maybe someday, we will each walk our own paths, meet many new people, and experience many new things. But I still hope that when we look back on these years, we will remember that once upon a time, we shared a beautiful friendship. Happy Birthday, and I hope this new chapter of your life will be one worth remembering."
+    ],
+    "quote": {
+      "en": "“Some things must come to an end, but I’ll always be grateful that they began.”",
+    },
+    "closing": "With all my love & warmth,",
+    "signature": "Thanhnhan"
+  },
+  "memories": {
+    "title": "memories...",
+    "photos": [
+      {
+        "url": "anh 1.png",
+        "caption": "still",
+        "rotation": -3
+      },
+      {
+        "url": "anh 2.jpg",
+        "caption": "live",
+        "rotation": 2.5
+      },
+      {
+        "url": "anh 3.jpg",
+        "caption": "in my mind",
+        "rotation": -1.5
+      }
+    ]
+  },
+  "ending": {
+    "preText": "That's all I wanted to say...",
+    "birthdayWish": "Happy Birthday ❤️",
+    "subWish": "May every single wish you make today come true ✨",
+    "credit": "Made with ❤️ just for you"
+  },
+  "music": {
+    "src": "assets/music/music.mp3",
+    "volume": 0.35,
+    "hint": "Turn on music for a better experience 🎵"
+  },
+  "reply": {
+    "enabled": true,
+    "title": "Leave a wish or message for me 💌",
+    "subtitle": "Is there something you'd like us to do together, a birthday wish, or just a small note to let me know you've read this...",
+    "placeholder": "Write your reply or wish here...",
+    "buttonText": "Send your reply 💌",
+    "successMessage": "Thank you! Your message has been sent to me ❤️",
+    "emailServiceUrl": "https://formspree.io/f/xqparwlz"
+  }
+}
