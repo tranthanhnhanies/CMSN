@@ -66,6 +66,6 @@
     "placeholder": "Write your reply or wish here...",
     "buttonText": "Send your reply 💌",
     "successMessage": "Thank you! Your message has been sent to me ❤️",
-    "emailServiceUrl": ""
+    "emailServiceUrl": "https://formspree.io/f/xqparwlz"
   }
 }
