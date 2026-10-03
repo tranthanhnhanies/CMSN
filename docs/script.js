@@ -144,8 +144,22 @@ function renderContent() {
   if (letterData.letter.quote) {
     const quoteEn = document.getElementById('quote-line-en');
     const quoteVi = document.getElementById('quote-line-vi');
-    if (quoteEn && letterData.letter.quote.en) quoteEn.textContent = letterData.letter.quote.en;
-    if (quoteVi && letterData.letter.quote.vi) quoteVi.textContent = letterData.letter.quote.vi;
+    if (quoteEn) {
+      if (letterData.letter.quote.en) {
+        quoteEn.textContent = letterData.letter.quote.en;
+        quoteEn.style.display = 'block';
+      } else {
+        quoteEn.style.display = 'none';
+      }
+    }
+    if (quoteVi) {
+      if (letterData.letter.quote.vi) {
+        quoteVi.textContent = letterData.letter.quote.vi;
+        quoteVi.style.display = 'block';
+      } else {
+        quoteVi.style.display = 'none';
+      }
+    }
   }
 
   // Render Memories Polaroid Grid
