@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>A Letter For You 💌 | Happy Birthday</title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="description" content="A warm, personal handwritten birthday letter created just for you.">
+  <meta name="theme-color" content="#141722">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💌</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Dancing+Script:wght@600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Floating Background Particles Canvas -->
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- Audio Player Controller -->
+  <div class="music-controller" id="music-controller">
+    <div class="music-capsule" id="music-capsule">
+      <button id="music-toggle-btn" class="music-btn" aria-label="Toggle background music" title="Toggle background music (Hover to adjust volume)">
+        <span class="music-icon" id="music-icon">🎵</span>
+        <span class="music-waves" id="music-waves">
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+      <div class="music-volume-wrapper" id="music-volume-wrapper">
+        <input type="range" id="music-volume-slider" class="music-volume-slider" min="0" max="1" step="0.01" value="0.35" aria-label="Adjust volume">
+        <span class="music-volume-val" id="music-volume-val">35%</span>
+      </div>
+    </div>
+    <audio id="bg-audio" preload="auto" loop></audio>
+  </div>
+
+  <!-- MAIN CONTAINER -->
+  <main class="app-container" id="app-container">
+
+    <!-- STEP 1: ENVELOPE STAGE -->
+    <section class="envelope-section" id="envelope-section" aria-label="Envelope stage">
+      <div class="envelope-wrapper" id="envelope-wrapper">
+        
+        <!-- The Envelope Container -->
+        <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Click to open the letter envelope">
+          
+          <!-- Back flap of envelope -->
+          <div class="envelope-back"></div>
+
+          <!-- Letter preview peeking inside envelope -->
+          <div class="envelope-letter-preview" id="envelope-letter-preview">
+            <div class="preview-lines">
+              <span class="preview-line short"></span>
+              <span class="preview-line full"></span>
+              <span class="preview-line medium"></span>
+            </div>
+            <div class="preview-heart">♥</div>
+          </div>
+
+          <!-- Front pocket of envelope (Left, Right, Bottom triangular folds) -->
+          <div class="envelope-pocket"></div>
+
+          <!-- Top Foldable Flap -->
+          <div class="envelope-flap" id="envelope-flap"></div>
+
+          <!-- Envelope Front Content (Postage stamp, Postmark, Recipient Tag) -->
+          <div class="envelope-front-details" id="envelope-front-details">
+            
+            <!-- Postage Stamp -->
+            <div class="stamp-box" title="Air Mail Stamp">
+              <img src="assets/images/stamp.svg" alt="Postage Stamp" class="stamp-img">
+              <div class="postmark">
+                <span class="postmark-date" id="env-stamp-date">10 • 03</span>
+                <span class="postmark-waves"></span>
+              </div>
+            </div>
+
+            <!-- Recipient Information Card -->
+            <div class="envelope-tag">
+              <span class="envelope-tag-lead">To my dearest friend:</span>
+              <h1 class="envelope-recipient" id="env-recipient">Special Friend</h1>
+              <p class="envelope-subtext" id="env-subtext">A letter for you...</p>
+            </div>
+
+            <!-- Wax Seal on flap -->
+            <div class="wax-seal" id="wax-seal" title="Open envelope">
+              <div class="wax-seal-inner">
+                <span class="wax-seal-symbol" id="wax-symbol">♥</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Call to Action Button Below Envelope -->
+        <div class="envelope-actions">
+          <button class="btn-open-letter" id="btn-open-letter" aria-label="Open the birthday letter">
+            <span class="btn-text" id="env-btn-text">Open the letter 💌</span>
+            <span class="btn-glow"></span>
+          </button>
+          <p class="hint-text">Tap on the envelope or click the button to open</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STEP 2 & 3: FULL LETTER STAGE (Initially Hidden/Collapsed) -->
+    <section class="letter-section" id="letter-section" aria-label="Birthday letter contents">
+      
+      <!-- Realistic Stationery Paper Sheet -->
+      <article class="paper-sheet" id="paper-sheet">
+        
+        <!-- Washi Tape & Paper Clip Decorations -->
+        <div class="washi-tape washi-tape-top-left" aria-hidden="true"></div>
+        <div class="washi-tape washi-tape-top-right" aria-hidden="true"></div>
+        <div class="paper-clip" aria-hidden="true"></div>
+
+        <!-- Letter Header -->
+        <header class="letter-header">
+          <div class="letter-date-row">
+            <span class="letter-date" id="letter-date">October 3, 2026</span>
+          </div>
+          <h2 class="letter-greeting" id="letter-greeting">Dear [Name],</h2>
+        </header>
+
+        <!-- Letter Body: Paragraphs rendered dynamically with reveal effect -->
+        <div class="letter-body" id="letter-body">
+          <!-- Dynamically populated from letter.json -->
+        </div>
+
+        <!-- Letter Highlight Quote (Centered, Italicized, Between Paragraphs & Closing) -->
+        <blockquote class="letter-quote" id="letter-quote">
+          <p class="quote-line-en" id="quote-line-en">“Some things must come to an end, but I’ll always be grateful that they began.”</p>
+        </blockquote>
+
+        <!-- Letter Sign-off -->
+        <footer class="letter-signoff" id="letter-signoff">
+          <p class="letter-closing" id="letter-closing">With all my love & warmth,</p>
+          <div class="letter-signature-wrap">
+            <span class="letter-signature" id="letter-signature">[Your Name]</span>
+            <span class="signature-stamp">♥</span>
+          </div>
+        </footer>
+
+        <!-- Decorative Floral Botanical Accent at bottom of paper -->
+        <div class="letter-botanical-decor" aria-hidden="true">
+          <svg viewBox="0 0 120 40" class="botanical-svg">
+            <path d="M10,25 Q35,5 60,25 T110,20" fill="none" stroke="#c4a482" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="2 3"/>
+            <circle cx="35" cy="15" r="2.5" fill="#d4a373" opacity="0.6"/>
+            <circle cx="60" cy="25" r="2" fill="#d4a373" opacity="0.5"/>
+            <circle cx="85" cy="18" r="2.5" fill="#d4a373" opacity="0.6"/>
+          </svg>
+        </div>
+
+      </article>
+
+      <!-- STEP 4: MEMORIES POLAROID GALLERY -->
+      <section class="memories-section" id="memories-section" aria-label="Memories photo gallery">
+        <div class="memories-header">
+          <span class="memories-icon">📸</span>
+          <h3 class="memories-title" id="memories-title">Some sweet memories...</h3>
+          <p class="memories-subtitle">The simplest moments are often the most special</p>
+        </div>
+
+        <!-- Polaroid Photos Grid -->
+        <div class="polaroid-grid" id="polaroid-grid">
+          <!-- Dynamically generated from letter.json -->
+        </div>
+      </section>
+
+      <!-- STEP 5: BIRTHDAY WISH & ROMANTIC ENDING -->
+      <section class="ending-section" id="ending-section" aria-label="Birthday wish and ending">
+        <!-- CARD 1: Birthday wish & Interactive Candle -->
+        <div class="ending-card" id="ending-card">
+          
+          <div class="ending-pre-text" id="ending-pretext">
+            That's all I wanted to say...
+          </div>
+
+          <div class="birthday-highlight">
+            <h2 class="birthday-main-wish" id="ending-birthday-wish">
+              Happy Birthday ❤️
+            </h2>
+            <p class="birthday-sub-wish" id="ending-sub-wish">
+              May every single wish you make today come true ✨
+            </p>
+          </div>
+
+          <!-- Interactive Candle & Celebration Area -->
+          <div class="candle-interactive-area" id="candle-interactive-area">
+            
+            <!-- The Aesthetic Burning Candle -->
+            <div class="candle-container" id="candle-container" role="button" tabindex="0" aria-label="Click to blow out the birthday candle and make a wish" title="Click to blow out the candle">
+              <!-- Glow halo -->
+              <div class="candle-glow" id="candle-glow"></div>
+              
+              <!-- Wind Gust Effect -->
+              <div class="wind-blow" id="wind-blow">
+                <span></span><span></span><span></span>
+              </div>
+
+              <!-- Smoke Puff when extinguished -->
+              <div class="smoke-puff" id="smoke-puff">
+                <span class="smoke-s1"></span>
+                <span class="smoke-s2"></span>
+                <span class="smoke-s3"></span>
+              </div>
+
+              <!-- Animated Flame -->
+              <div class="candle-flame-wrap" id="candle-flame-wrap">
+                <div class="candle-flame" id="candle-flame"></div>
+                <div class="candle-flame-core"></div>
+              </div>
+
+              <!-- Candle Wick -->
+              <div class="candle-wick"></div>
+
+              <!-- Candle Wax Stick -->
+              <div class="candle-stick">
+                <div class="candle-stripes"></div>
+              </div>
+
+              <!-- Candle Plate/Base -->
+              <div class="candle-base"></div>
+            </div>
+
+            <!-- Action Button / Status Hint -->
+            <div class="celebrate-action">
+              <button class="btn-celebrate" id="btn-celebrate" aria-label="Blow candle and make a wish">
+                <span class="btn-sparkle-icon">✨</span>
+                <span id="btn-celebrate-text">Blow out the candle & Make a wish</span>
+                <span class="btn-sparkle-icon">🎂</span>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- SEPARATE CARD 2: Interactive Reply / Wish Box -->
+        <div class="reply-card-box" id="reply-card-box">
+          <div class="reply-header">
+            <span class="reply-icon">✍️</span>
+            <h3 class="reply-title" id="reply-title">Leave a wish or message for me 💌</h3>
+            <p class="reply-subtitle" id="reply-subtitle">Is there something you'd like us to do together, a birthday wish, or just a small note to let me know you've read this...</p>
+          </div>
+
+          <form id="reply-form" class="reply-form">
+            <div class="reply-input-wrap">
+              <textarea id="reply-message" class="reply-textarea" rows="3" placeholder="Write your reply or wish here..." required maxlength="1000"></textarea>
+            </div>
+            <button type="submit" class="btn-send-reply" id="btn-send-reply">
+              <span id="reply-btn-text">Send your reply 💌</span>
+              <span class="btn-spinner" id="reply-spinner"></span>
+            </button>
+          </form>
+
+          <div class="reply-success-message" id="reply-success-message">
+            <div class="success-heart">💖</div>
+            <p class="success-text" id="reply-success-text">Thank you! Your message has been sent to me ❤️</p>
+            <button type="button" class="btn-send-another" id="btn-send-another">
+              <span>Send another message ✍️</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Made with Love Footer -->
+        <footer class="ending-credit" id="ending-credit">
+          Made with ❤️ just for you
+        </footer>
+
+      </section>
+
+    </section>
+
+  </main>
+
+  <!-- Photo Lightbox Modal for Zooming In -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-hidden="true" aria-label="View enlarged photo">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close photo">&times;</button>
+      <img src="" alt="Memory Photo" class="lightbox-img" id="lightbox-img">
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
