@@ -17,7 +17,7 @@ const DEFAULT_LETTER_DATA = {
     recipient: "Special Friend"
   },
   envelope: {
-    to: "My Duyen",
+    to: "Vo Ngoc My Duyen",
     subtext: "A letter for you...",
     openButton: "Open the letter 💌",
     waxSealSymbol: "♥"
