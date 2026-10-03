@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fce7d2"/>
+      <stop offset="50%" stop-color="#f8d1ba"/>
+      <stop offset="100%" stop-color="#eddcd2"/>
+    </linearGradient>
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffdda1"/>
+      <stop offset="100%" stop-color="#f7a072"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffe8cc" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#f8d1ba" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softBlur">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="600" fill="url(#skyGrad1)"/>
+
+  <!-- Sun Glow -->
+  <circle cx="300" cy="280" r="160" fill="url(#sunGlow)" filter="url(#softBlur)"/>
+  <circle cx="300" cy="280" r="85" fill="url(#sunGrad)"/>
+
+  <!-- Soft Mountains / Hills -->
+  <path d="M-50 480 Q 120 380 260 440 T 650 420 L 650 600 L -50 600 Z" fill="#ddb892" opacity="0.65"/>
+  <path d="M-20 520 Q 180 430 380 490 T 650 480 L 650 600 L -20 600 Z" fill="#b08968" opacity="0.85"/>
+  <path d="M0 550 Q 220 480 460 540 T 620 530 L 620 600 L 0 600 Z" fill="#7f5539"/>
+
+  <!-- Subtle Birds / Sparkles -->
+  <path d="M 220 180 Q 230 170 240 180 Q 250 170 260 180" fill="none" stroke="#9c6644" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 340 140 Q 350 132 360 140 Q 370 132 380 140" fill="none" stroke="#9c6644" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 180 220 Q 188 212 196 220 Q 204 212 212 220" fill="none" stroke="#9c6644" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Flower / Botanical silhouette -->
+  <path d="M 120 600 C 130 520, 110 460, 150 420" fill="none" stroke="#654228" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="150" cy="420" r="7" fill="#e07a5f"/>
+  <circle cx="140" cy="415" r="5" fill="#f4a261"/>
+  <circle cx="160" cy="418" r="5" fill="#f4a261"/>
+
+  <path d="M 480 600 C 470 510, 490 440, 460 390" fill="none" stroke="#654228" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="460" cy="390" r="8" fill="#e07a5f"/>
+  <circle cx="450" cy="385" r="6" fill="#f4a261"/>
+  <circle cx="472" cy="388" r="6" fill="#f4a261"/>
+</svg>
