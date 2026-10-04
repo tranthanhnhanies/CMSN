@@ -58,6 +58,11 @@ const DEFAULT_LETTER_DATA = {
         url: "anh 3.jpg",
         caption: "in my mind",
         rotation: -2
+      },
+      {
+        url: "anh 4.jpg",
+        caption: "always",
+        rotation: 2
       }
     ]
   },
